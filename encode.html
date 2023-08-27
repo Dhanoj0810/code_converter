@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/bg.css">
+  <title>Secret Message Encoder</title>
+  <script src="js/java.js"></script>
+  <style>
+    /* Styling for the form container */
+    .form-container {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #0ff485;
+      text-align: center;
+    }
+    /* Styling for form elements */
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    button {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    /* Styling for the result container */
+    .result-container {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+   <!-- Add Bootstrap JS and jQuery (required for Bootstrap) -->
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div>
+  <!-- Heading -->
+  <h1>
+    <span>CRACK THE CODE</span>
+  </h1>
+  <!-- Button to open the slide bar -->
+  <button class="btn btn-dark" onclick="openNav()"> ☰ </button>
+  <!-- The slide bar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="home.html" class="nav-link">Home</a>
+    <a href="encode.html" class="nav-link">Encode</a>
+    <a href="decode.html" class="nav-link">Decode</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  </div>
+  <div class="container mt-5">
+    <div class="form-container">
+      <h1 class="text-center">Secret Message Encoder</h1>
+      <form id="encodeForm">
+        <div class="form-group">
+          <label for="message" style="color: red;">**WARNING: CASE INSENSITIVE**</label>
+          <input type="text" class="form-control" id="message" name="message" placeholder="Your message...">
+        </div>
+        <button type="button" class="btn btn-primary btn-block" onclick="encode()">Encode</button>
+      </form>
+      <div class="result-container" id="result"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

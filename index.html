@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="css/bg.css">
+    <style>
+        /* Your CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #bcb3b3;
+            overflow: hidden;
+        }
+        #logo-container {
+            text-align: center;
+            position: relative;
+        }
+        .logo2 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-duration: 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+        }
+        .logo2:hover {
+            width: 150px;
+            height: 120px;
+        }
+        .brand-name {
+            font-size: 24px;
+            margin-top: 10px;
+            transition: font-size 0.3s ease-in-out;
+        }
+        .brand-name:hover {
+            font-size: 30px; /* Adjust the desired font size when hovered */
+        }
+    </style>
+</head>
+<body onclick="redirectToNextPage()">
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+    <div id="logo-container">
+        <img src="image/logo3.png" alt="Logo 2" class="logo2" id="logo2">
+    </div>
+    <div class="brand-name">⠀⠀RACK THE CODE</div>
+    <script>
+        function redirectToNextPage() {
+            // Replace 'home.html' with the URL of the next page you want to navigate to
+            window.location.href = 'home.html';
+        }
+    </script>
+</body>
+</html>

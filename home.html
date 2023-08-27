@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/bg.css">
+  <script src="js/java.js"></script>
+  <style>
+    /* Styling for description boxes */
+    .description {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-align: center;
+      width: 50%;
+      margin: 20px auto;
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      cursor: pointer;
+      transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    }
+    .description:hover {
+      transform: scale(1.05);
+    }
+    /* Gradient background */
+    body {
+      background: linear-gradient(135deg, #ff6b6b, #7158e2);
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body>
+<!-- Add Bootstrap JS and jQuery (required for Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Heading -->
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div>
+  <h1>
+    <span>CRACK THE CODE</span>
+  </h1>
+  <!-- Button to open the slide bar -->
+  <button class="btn btn-dark my-3" onclick="openNav()"> ☰ </button>
+  <!-- The slide bar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="home.html">Home</a>
+    <a href="encode.html">Encode</a>
+    <a href="decode.html">Decode</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  </div>
+  <!-- Description boxes (links to encoding and decoding pages) -->
+  <div class="description" onclick="window.location.href='encode.html'">
+    <h2>Create Secret Code</h2>
+    <p>Click here to create a secret code.</p>
+  </div>
+  <div class="description" onclick="window.location.href='decode.html'">
+    <h2>Decode Secret Code</h2>
+    <p>Click here to decode a secret code.</p>
+  </div>
+</div>
+</body>
+</html>

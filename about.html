@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bg.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/java.js"></script>
+    <title>About Us</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+  <!-- Add Bootstrap JS and jQuery (required for Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+  <!-- Heading -->
+  <h1>
+    <span>CRACK THE CODE</span>
+  </h1>
+  <!-- Button to open the slide bar -->
+  <button class="btn btn-dark" onclick="openNav()"> ☰ </button>
+  <!-- The slide bar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="home.html" class="nav-link">Home</a>
+    <a href="encode.html" class="nav-link">Encode</a>
+    <a href="decode.html" class="nav-link">Decode</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  </div>
+    <div class="container mt-5">
+        <h2>About Us</h2>
+        <p>Provided set of characters represents a simple substitution cipher where each letter of the alphabet is replaced with a corresponding special character. This type of encoding is straightforward and can be done manually without the need for complex algorithms or software. For example, the letter 'a' is replaced with '@', 'b' with '#', and so on. To decode the message, you simply reverse the process by replacing special characters with their corresponding letters.</p>
+        <p>Secret code encoding and decoding are vital for securing confidential information, involve various encoding techniques, and rely on effective key management to maintain data security. These concepts play a significant role in modern data protection and privacy.</p>
+    </div>
+</body>
+</html>

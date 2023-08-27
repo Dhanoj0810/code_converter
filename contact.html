@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/java.js"></script>
+    <!-- Add your CSS links here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bg.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome Icons -->
+    <style>
+        /* Custom styles for the Contact Us page */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .description {
+            /* Your description styles */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            width: 50%;
+            margin: 20px auto;
+            text-align:left;
+            background-color: #0ff485;
+            padding: 20px;
+            cursor: pointer;
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+        }
+        /* Add your footer styles here */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .social-icons {
+            font-size: 24px;
+        }
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+        <!-- Add Bootstrap JS and jQuery (required for Bootstrap) -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div>
+        <!-- Heading -->
+        <h1>
+            <span>CRACK THE CODE</span>
+        </h1>
+        <!-- Button to open the slide bar -->
+        <button class="btn btn-dark" onclick="openNav()"> ☰ </button>
+        <!-- The slide bar -->
+        <div id="mySidebar" class="sidebar">
+            <a href="home.html" class="nav-link">Home</a>
+            <a href="encode.html" class="nav-link">Encode</a>
+            <a href="decode.html" class="nav-link">Decode</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        </div>
+        <div class="container mt-4">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feedback, or inquiries, please feel free to contact us using the information below:</p>
+            <h2>Contact Information</h2>
+            <ul>
+                <li>Email: <a href="mailto:dhanojkc123@gmail.com" style="color: red;">dhanojkc123@gmail.com</a></li>
+                <li>Phone: <a href="tel:9778711517" style="color: red;">9778711517</a></li>
+            </ul>
+        </div>
+        <div class="description">
+            <h2>Contact Form</h2>
+            <!-- Warning message container -->
+            <div id="warningMessage" class="alert alert-danger" style="display: none;"></div>
+            <!-- Validation error messages container -->
+            <div id="errorMessages" style="color: red;"></div>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                    <!-- Error message for name field -->
+                    <span id="nameError" style="color: red;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="text" class="form-control" id="email" name="email">
+                    <!-- Error message for email field -->
+                    <span id="emailError" style="color: red;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                    <!-- Error message for message field -->
+                    <span id="messageError" style="color: red;"></span>
+                </div>
+                <center><button type="submit" class="btn btn-primary">Submit</button></center>
+            </form>
+        </div>
+    
+        <script>
+            // Get a reference to the form element, warning message containers, and form fields
+            var contactForm = document.getElementById("contactForm");
+            var warningMessage = document.getElementById("warningMessage");
+            var errorMessages = document.getElementById("errorMessages");
+            var nameField = document.getElementById("name");
+            var emailField = document.getElementById("email");
+            var messageField = document.getElementById("message");
+            var nameError = document.getElementById("nameError");
+            var emailError = document.getElementById("emailError");
+            var messageError = document.getElementById("messageError");
+
+            // Add a form submission event listener
+            contactForm.addEventListener("submit", function (e) {
+                e.preventDefault(); // Prevent the default form submission behavior
+
+                // Clear previous messages
+                warningMessage.style.display = "none";
+                errorMessages.innerHTML = "";
+                nameError.innerHTML = "";
+                emailError.innerHTML = "";
+                messageError.innerHTML = "";
+
+                // Validate the form fields here
+                var name = nameField.value.trim();
+                var email = emailField.value.trim();
+                var message = messageField.value.trim();
+
+                // Check if the name is empty
+                if (name === "") {
+                    nameError.innerHTML = "Please enter your name.";
+                }
+
+                // Check if the email is empty and valid
+                if (email === "") {
+                    emailError.innerHTML = "Please enter your email.";
+                } else {
+                    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                    if (!emailPattern.test(email)) {
+                        emailError.innerHTML = "Please enter a valid email address.";
+                    }
+                }
+
+                // Check if the message is empty
+                if (message === "") {
+                    messageError.innerHTML = "Please enter your message.";
+                }
+
+                // If there are validation errors, display them
+                if (nameError.innerHTML !== "" || emailError.innerHTML !== "" || messageError.innerHTML !== "") {
+                    return; // Don't submit the form if there are errors
+                }
+
+                // If all fields are valid, you can submit the form or take any other necessary action.
+                // You can submit the form to a server here if needed.
+                alert("Message sent successfully!");
+                nameError.innerHTML = "";
+                emailError.innerHTML = "";
+                messageError.innerHTML = "";
+                contactForm.reset();
+            });
+        </script>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/dhanoj.cherry?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/DjKC08102003?t=zOhYFcrnG_y5rcWknT8wHA&s=08" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/_dj__k_c_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+            <!-- Add more social media icons and links as needed -->
+        </div>
+        <p>&copy; 2023 Crack The Code</p>
+    </div>
+
+    <!-- Add your JavaScript scripts here -->
+</body>
+</html>
